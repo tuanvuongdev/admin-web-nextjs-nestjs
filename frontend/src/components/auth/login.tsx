@@ -9,7 +9,7 @@ const Login = () => {
   const router = useRouter();
 
   const onFinish = async (values: any) => {
-    console.log(values)
+    console.log(values);
     const { username, password } = values;
 
     // trigger sign-in
@@ -18,16 +18,16 @@ const Login = () => {
     if (res?.error) {
       notification.error({
         message: "Error login",
-        description: res.error
-      })
+        description: res.error,
+      });
       if (res?.code === 2) {
-        router.push("/verify")
+        console.log(">>> check res", res);
+        router.push(`/verify/${res?.data?._id}`);
       }
     } else {
       // redirect to dashboard
       router.push("/dashboard");
     }
-
   };
 
   return (
