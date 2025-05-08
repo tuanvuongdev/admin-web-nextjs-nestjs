@@ -6,10 +6,12 @@ import { useContext } from 'react';
 import { DownOutlined, SmileOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
-import { signOut, useSession } from 'next-auth/react';
+import { useSession } from "next-auth/react"
+import { signOut } from "next-auth/react"
 
 const AdminHeader = (props: any) => {
-    const { session } = props
+    // const { data: session, status } = useSession();
+    const { session } = props;
 
     const { Header } = Layout;
     const { collapseMenu, setCollapseMenu } = useContext(AdminContext)!;
@@ -23,11 +25,11 @@ const AdminHeader = (props: any) => {
                 </span>
             ),
         },
+
         {
             key: '4',
             danger: true,
-            onClick: () => signOut(),
-            label: 'Sign out'
+            label: <span onClick={() => signOut()}>Đăng xuất</span>,
         },
     ];
 

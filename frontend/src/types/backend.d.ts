@@ -31,10 +31,10 @@ declare global {
 
     interface ILogin {
         user: {
-            email: string;
             _id: string;
             name: string;
-        };
+            email: string;
+        }
         access_token: string;
     }
 

@@ -2,7 +2,7 @@
 import { AuthError } from "next-auth";
 
 export class CustomAuthError extends AuthError {
-    type: string;
+    static type: string;
 
     constructor(message?: any) {
         super();
@@ -12,9 +12,9 @@ export class CustomAuthError extends AuthError {
 }
 
 export class InvalidEmailPasswordError extends AuthError {
-    static type = "Email/Password is invalid";
+    static type = "Email/Password không hợp lệ"
 }
 
 export class InactiveAccountError extends AuthError {
-    static type = "Account is inactive";
+    static type = "Tài khoản chưa được kích hoạt"
 }

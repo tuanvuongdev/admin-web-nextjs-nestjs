@@ -5,5 +5,7 @@ export const config = {
         // '/((?!auth).*)(.+)|/verify',
         // "/((?!api|_next/static|_next/image|favicon.ico|/|/auth).*)",
         '/((?!api|_next/static|_next/image|favicon.ico|auth|verify|$).*)',
+
+
     ],
 }
